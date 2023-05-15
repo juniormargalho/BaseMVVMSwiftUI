@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-// MARK: Body
 struct LoginView: View {
     @StateObject var viewModel: LoginViewModel = .init()
+    @State private var isGoToForgotPassword = false
     
+    // MARK: Body
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
@@ -52,6 +53,16 @@ struct LoginView: View {
                     }
                     .padding([.leading, .trailing], 20)
                     .padding(.top, 20)
+                    HStack(spacing: 0) {
+                        Spacer()
+                        Button {
+                            isGoToForgotPassword.toggle()
+                        } label: {
+                            labelButtonForgotPassword
+                        }
+                    }
+                    .padding([.leading, .trailing], 20)
+                    .padding(.top, 4)
                     Spacer()
                     Button {
                         viewModel.login()
@@ -70,6 +81,10 @@ struct LoginView: View {
                       message: Text(viewModel.state.errorMessage)
                 )
             }
+            
+            NavigationLink(
+                destination: ForgotPasswordViewControllerRepresentable(),
+                isActive: $isGoToForgotPassword) {}
         }
     }
 }
@@ -84,6 +99,12 @@ extension LoginView {
             .frame(maxWidth: .infinity)
             .background(viewModel.isDisabledButton() ? Color.gray : Color.black)
             .cornerRadius(4)
+    }
+    
+    private var labelButtonForgotPassword: some View {
+        Text("Esqueci minha senha")
+            .font(Font.system(size: 12, weight: .medium))
+            .foregroundColor(.black)
     }
 }
 
