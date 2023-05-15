@@ -9,6 +9,5 @@ import Foundation
 
 struct LoginResponseModel {
     var userName: String
-    var userEmail: String
     var userAvatar: String?
 }

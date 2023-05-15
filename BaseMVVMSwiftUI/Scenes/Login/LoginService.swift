@@ -11,9 +11,8 @@ final class LoginService {
     func postLogin(model: LoginRequestModel,
                    completion: @escaping (Result<LoginResponseModel, Error>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if model.email == "user" && model.password == "123456" {
-                let model = LoginResponseModel(userName: "Usuário",
-                                               userEmail: "usuario@email.com")
+            if model.email == "user@email.com" && model.password == "123456" {
+                let model = LoginResponseModel(userName: "Usuário")
                 completion(.success(model))
             } else {
                 completion(.failure(NSError()))

@@ -16,6 +16,7 @@
 		CED80DD92A12A000009F3569 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DD82A12A000009F3569 /* LoginService.swift */; };
 		CED80DDD2A12A1C1009F3569 /* LoginRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DDC2A12A1C1009F3569 /* LoginRequestModel.swift */; };
 		CED80DDF2A12A1F9009F3569 /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DDE2A12A1F9009F3569 /* LoginResponseModel.swift */; };
+		CED80DE22A12B4E3009F3569 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DE12A12B4E3009F3569 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CED80DD82A12A000009F3569 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		CED80DDC2A12A1C1009F3569 /* LoginRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequestModel.swift; sourceTree = "<group>"; };
 		CED80DDE2A12A1F9009F3569 /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
+		CED80DE12A12B4E3009F3569 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		CED80DC22A129C7E009F3569 /* BaseMVVMSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CED80DE02A12B4CC009F3569 /* Resources */,
 				CED80DD22A129D6B009F3569 /* Sources */,
 				CED80DD12A129D3F009F3569 /* Scenes */,
 				CED80DC52A129C7E009F3569 /* ContentView.swift */,
@@ -120,6 +123,14 @@
 			children = (
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		CED80DE02A12B4CC009F3569 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CED80DE12A12B4E3009F3569 /* LoadingView.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 				CED80DDF2A12A1F9009F3569 /* LoginResponseModel.swift in Sources */,
 				CED80DD92A12A000009F3569 /* LoginService.swift in Sources */,
 				CED80DDD2A12A1C1009F3569 /* LoginRequestModel.swift in Sources */,
+				CED80DE22A12B4E3009F3569 /* LoadingView.swift in Sources */,
 				CED80DC62A129C7E009F3569 /* ContentView.swift in Sources */,
 				CED80DC42A129C7E009F3569 /* BaseMVVMSwiftUIApp.swift in Sources */,
 			);
