@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CED80DC42A129C7E009F3569 /* BaseMVVMSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DC32A129C7E009F3569 /* BaseMVVMSwiftUIApp.swift */; };
-		CED80DC62A129C7E009F3569 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DC52A129C7E009F3569 /* ContentView.swift */; };
 		CED80DC82A129C80009F3569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED80DC72A129C80009F3569 /* Assets.xcassets */; };
 		CED80DCB2A129C80009F3569 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED80DCA2A129C80009F3569 /* Preview Assets.xcassets */; };
 		CED80DD52A129DBE009F3569 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DD42A129DBE009F3569 /* LoginView.swift */; };
@@ -20,12 +19,13 @@
 		CED80DE62A12CB64009F3569 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DE42A12CB64009F3569 /* ForgotPasswordViewController.swift */; };
 		CED80DE72A12CB64009F3569 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED80DE52A12CB64009F3569 /* ForgotPasswordViewController.xib */; };
 		CED80DE92A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DE82A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift */; };
+		CED80DEB2A13BFF6009F3569 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DEA2A13BFF6009F3569 /* SuccessView.swift */; };
+		CED80DEE2A13CCF2009F3569 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DED2A13CCF2009F3569 /* NavigationUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CED80DC02A129C7E009F3569 /* BaseMVVMSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseMVVMSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED80DC32A129C7E009F3569 /* BaseMVVMSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMVVMSwiftUIApp.swift; sourceTree = "<group>"; };
-		CED80DC52A129C7E009F3569 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CED80DC72A129C80009F3569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CED80DCA2A129C80009F3569 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CED80DD42A129DBE009F3569 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -37,6 +37,8 @@
 		CED80DE42A12CB64009F3569 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		CED80DE52A12CB64009F3569 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		CED80DE82A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		CED80DEA2A13BFF6009F3569 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		CED80DED2A13CCF2009F3569 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +71,10 @@
 		CED80DC22A129C7E009F3569 /* BaseMVVMSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CED80DEC2A13CCB7009F3569 /* Commons */,
 				CED80DE02A12B4CC009F3569 /* Resources */,
 				CED80DD22A129D6B009F3569 /* Sources */,
 				CED80DD12A129D3F009F3569 /* Scenes */,
-				CED80DC52A129C7E009F3569 /* ContentView.swift */,
-				CED80DC72A129C80009F3569 /* Assets.xcassets */,
 				CED80DC92A129C80009F3569 /* Preview Content */,
 			);
 			path = BaseMVVMSwiftUI;
@@ -135,7 +136,7 @@
 		CED80DE02A12B4CC009F3569 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CED80DE12A12B4E3009F3569 /* LoadingView.swift */,
+				CED80DC72A129C80009F3569 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -148,6 +149,16 @@
 				CED80DE52A12CB64009F3569 /* ForgotPasswordViewController.xib */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		CED80DEC2A13CCB7009F3569 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				CED80DE12A12B4E3009F3569 /* LoadingView.swift */,
+				CED80DEA2A13BFF6009F3569 /* SuccessView.swift */,
+				CED80DED2A13CCF2009F3569 /* NavigationUtil.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,11 +236,12 @@
 				CED80DE92A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift in Sources */,
 				CED80DD52A129DBE009F3569 /* LoginView.swift in Sources */,
 				CED80DDF2A12A1F9009F3569 /* LoginResponseModel.swift in Sources */,
+				CED80DEE2A13CCF2009F3569 /* NavigationUtil.swift in Sources */,
 				CED80DD92A12A000009F3569 /* LoginService.swift in Sources */,
 				CED80DDD2A12A1C1009F3569 /* LoginRequestModel.swift in Sources */,
 				CED80DE62A12CB64009F3569 /* ForgotPasswordViewController.swift in Sources */,
+				CED80DEB2A13BFF6009F3569 /* SuccessView.swift in Sources */,
 				CED80DE22A12B4E3009F3569 /* LoadingView.swift in Sources */,
-				CED80DC62A129C7E009F3569 /* ContentView.swift in Sources */,
 				CED80DC42A129C7E009F3569 /* BaseMVVMSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
