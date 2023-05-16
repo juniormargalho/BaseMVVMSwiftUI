@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginRequestModel {
+public struct LoginRequestModel {
     var email: String
     var password: String
 }

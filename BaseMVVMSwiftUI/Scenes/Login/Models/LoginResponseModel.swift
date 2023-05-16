@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LoginResponseModel {
+public struct LoginResponseModel {
     var userName: String
     var userAvatar: String?
 }

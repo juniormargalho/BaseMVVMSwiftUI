@@ -21,7 +21,19 @@
 		CED80DE92A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DE82A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift */; };
 		CED80DEB2A13BFF6009F3569 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DEA2A13BFF6009F3569 /* SuccessView.swift */; };
 		CED80DEE2A13CCF2009F3569 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DED2A13CCF2009F3569 /* NavigationUtil.swift */; };
+		CED80DFE2A13EEB7009F3569 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DFD2A13EEB7009F3569 /* LoginTests.swift */; };
+		CED80E002A13FE7B009F3569 /* LoginServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DFF2A13FE7B009F3569 /* LoginServiceSpy.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CED80DF72A13EE15009F3569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CED80DB82A129C7E009F3569 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CED80DBF2A129C7E009F3569;
+			remoteInfo = BaseMVVMSwiftUI;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CED80DC02A129C7E009F3569 /* BaseMVVMSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseMVVMSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,10 +51,20 @@
 		CED80DE82A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		CED80DEA2A13BFF6009F3569 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		CED80DED2A13CCF2009F3569 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
+		CED80DF32A13EE15009F3569 /* BaseMVVMSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseMVVMSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED80DFD2A13EEB7009F3569 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
+		CED80DFF2A13FE7B009F3569 /* LoginServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CED80DBD2A129C7E009F3569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED80DF02A13EE15009F3569 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				CED80DC22A129C7E009F3569 /* BaseMVVMSwiftUI */,
+				CED80DF42A13EE15009F3569 /* BaseMVVMSwiftUITests */,
 				CED80DC12A129C7E009F3569 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				CED80DC02A129C7E009F3569 /* BaseMVVMSwiftUI.app */,
+				CED80DF32A13EE15009F3569 /* BaseMVVMSwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,6 +185,23 @@
 			path = Commons;
 			sourceTree = "<group>";
 		};
+		CED80DF42A13EE15009F3569 /* BaseMVVMSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CED80DFC2A13EE2B009F3569 /* Login */,
+			);
+			path = BaseMVVMSwiftUITests;
+			sourceTree = "<group>";
+		};
+		CED80DFC2A13EE2B009F3569 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CED80DFF2A13FE7B009F3569 /* LoginServiceSpy.swift */,
+				CED80DFD2A13EEB7009F3569 /* LoginTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +222,24 @@
 			productReference = CED80DC02A129C7E009F3569 /* BaseMVVMSwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CED80DF22A13EE15009F3569 /* BaseMVVMSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CED80DF92A13EE15009F3569 /* Build configuration list for PBXNativeTarget "BaseMVVMSwiftUITests" */;
+			buildPhases = (
+				CED80DEF2A13EE15009F3569 /* Sources */,
+				CED80DF02A13EE15009F3569 /* Frameworks */,
+				CED80DF12A13EE15009F3569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CED80DF82A13EE15009F3569 /* PBXTargetDependency */,
+			);
+			name = BaseMVVMSwiftUITests;
+			productName = BaseMVVMSwiftUITests;
+			productReference = CED80DF32A13EE15009F3569 /* BaseMVVMSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -193,6 +252,11 @@
 				TargetAttributes = {
 					CED80DBF2A129C7E009F3569 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					CED80DF22A13EE15009F3569 = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+						TestTargetID = CED80DBF2A129C7E009F3569;
 					};
 				};
 			};
@@ -210,6 +274,7 @@
 			projectRoot = "";
 			targets = (
 				CED80DBF2A129C7E009F3569 /* BaseMVVMSwiftUI */,
+				CED80DF22A13EE15009F3569 /* BaseMVVMSwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -222,6 +287,13 @@
 				CED80DE72A12CB64009F3569 /* ForgotPasswordViewController.xib in Resources */,
 				CED80DCB2A129C80009F3569 /* Preview Assets.xcassets in Resources */,
 				CED80DC82A129C80009F3569 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CED80DF12A13EE15009F3569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +318,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CED80DEF2A13EE15009F3569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED80E002A13FE7B009F3569 /* LoginServiceSpy.swift in Sources */,
+				CED80DFE2A13EEB7009F3569 /* LoginTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CED80DF82A13EE15009F3569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CED80DBF2A129C7E009F3569 /* BaseMVVMSwiftUI */;
+			targetProxy = CED80DF72A13EE15009F3569 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CED80DCC2A129C80009F3569 /* Debug */ = {
@@ -429,6 +518,63 @@
 			};
 			name = Release;
 		};
+		CED80DFA2A13EE15009F3569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K2BTS9QU46;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.junior.BaseMVVMSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaseMVVMSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BaseMVVMSwiftUI";
+			};
+			name = Debug;
+		};
+		CED80DFB2A13EE15009F3569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K2BTS9QU46;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.junior.BaseMVVMSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BaseMVVMSwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BaseMVVMSwiftUI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,6 +592,15 @@
 			buildConfigurations = (
 				CED80DCF2A129C80009F3569 /* Debug */,
 				CED80DD02A129C80009F3569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CED80DF92A13EE15009F3569 /* Build configuration list for PBXNativeTarget "BaseMVVMSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED80DFA2A13EE15009F3569 /* Debug */,
+				CED80DFB2A13EE15009F3569 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

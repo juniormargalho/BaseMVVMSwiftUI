@@ -7,7 +7,12 @@
 
 import Foundation
 
-final class LoginService {
+public protocol LoginServiceProtocol {
+    func postLogin(model: LoginRequestModel,
+                   completion: @escaping (Result<LoginResponseModel, Error>) -> Void)
+}
+
+final class LoginService: LoginServiceProtocol {
     func postLogin(model: LoginRequestModel,
                    completion: @escaping (Result<LoginResponseModel, Error>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginViewState {
+struct LoginViewState: Equatable {
     var isLoading = false
     var hasError = false
     var errorMessage = ""
@@ -17,9 +17,9 @@ struct LoginViewState {
     var userAvatar = ""
 }
 
-@MainActor class LoginViewModel: ObservableObject {
+final class LoginViewModel: ObservableObject {
     @Published private(set) var state: LoginViewState
-    private let service: LoginService
+    private let service: LoginServiceProtocol
     
     var userEmailBinding: Binding<String> {
         Binding(get: { self.state.userEmail },
@@ -36,7 +36,8 @@ struct LoginViewState {
                 set: { self.state.hasError = $0 })
     }
     
-    init(state: LoginViewState = .init(), service: LoginService = .init()) {
+    init(state: LoginViewState = .init(),
+         service: LoginServiceProtocol = LoginService()) {
         self.state = state
         self.service = service
     }
