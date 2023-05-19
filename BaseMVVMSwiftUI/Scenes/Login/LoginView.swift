@@ -85,6 +85,10 @@ struct LoginView: View {
             NavigationLink(
                 destination: ForgotPasswordViewControllerRepresentable(),
                 isActive: $isGoToForgotPassword) {}
+            
+            NavigationLink(
+                destination: HomeView(),
+                isActive: viewModel.hasSuccessBinding) {}
         }
     }
 }

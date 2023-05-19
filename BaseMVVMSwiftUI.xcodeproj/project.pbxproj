@@ -23,6 +23,10 @@
 		CED80DEE2A13CCF2009F3569 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DED2A13CCF2009F3569 /* NavigationUtil.swift */; };
 		CED80DFE2A13EEB7009F3569 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DFD2A13EEB7009F3569 /* LoginTests.swift */; };
 		CED80E002A13FE7B009F3569 /* LoginServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80DFF2A13FE7B009F3569 /* LoginServiceSpy.swift */; };
+		CED80E402A17F11D009F3569 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E3F2A17F11D009F3569 /* SessionManager.swift */; };
+		CED80E432A17F47B009F3569 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E422A17F47B009F3569 /* SessionModel.swift */; };
+		CED80E462A17FD75009F3569 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E452A17FD75009F3569 /* HomeView.swift */; };
+		CED80E482A17FEC2009F3569 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E472A17FEC2009F3569 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		CED80DF32A13EE15009F3569 /* BaseMVVMSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BaseMVVMSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED80DFD2A13EEB7009F3569 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		CED80DFF2A13FE7B009F3569 /* LoginServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceSpy.swift; sourceTree = "<group>"; };
+		CED80E3F2A17F11D009F3569 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		CED80E422A17F47B009F3569 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
+		CED80E452A17FD75009F3569 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CED80E472A17FEC2009F3569 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 		CED80DD12A129D3F009F3569 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CED80E442A17FD57009F3569 /* Home */,
 				CED80DE32A12CB43009F3569 /* ForgotPassword */,
 				CED80DD32A129D79009F3569 /* Login */,
 			);
@@ -125,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				CED80DC32A129C7E009F3569 /* BaseMVVMSwiftUIApp.swift */,
+				CED80E3F2A17F11D009F3569 /* SessionManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -178,6 +188,7 @@
 		CED80DEC2A13CCB7009F3569 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				CED80E412A17F45B009F3569 /* Models */,
 				CED80DE12A12B4E3009F3569 /* LoadingView.swift */,
 				CED80DEA2A13BFF6009F3569 /* SuccessView.swift */,
 				CED80DED2A13CCF2009F3569 /* NavigationUtil.swift */,
@@ -200,6 +211,23 @@
 				CED80DFD2A13EEB7009F3569 /* LoginTests.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		CED80E412A17F45B009F3569 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CED80E422A17F47B009F3569 /* SessionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CED80E442A17FD57009F3569 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CED80E472A17FEC2009F3569 /* HomeViewModel.swift */,
+				CED80E452A17FD75009F3569 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,15 +333,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED80DD72A129FEE009F3569 /* LoginViewModel.swift in Sources */,
+				CED80E462A17FD75009F3569 /* HomeView.swift in Sources */,
 				CED80DE92A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift in Sources */,
+				CED80E402A17F11D009F3569 /* SessionManager.swift in Sources */,
 				CED80DD52A129DBE009F3569 /* LoginView.swift in Sources */,
 				CED80DDF2A12A1F9009F3569 /* LoginResponseModel.swift in Sources */,
 				CED80DEE2A13CCF2009F3569 /* NavigationUtil.swift in Sources */,
 				CED80DD92A12A000009F3569 /* LoginService.swift in Sources */,
 				CED80DDD2A12A1C1009F3569 /* LoginRequestModel.swift in Sources */,
 				CED80DE62A12CB64009F3569 /* ForgotPasswordViewController.swift in Sources */,
+				CED80E432A17F47B009F3569 /* SessionModel.swift in Sources */,
 				CED80DEB2A13BFF6009F3569 /* SuccessView.swift in Sources */,
 				CED80DE22A12B4E3009F3569 /* LoadingView.swift in Sources */,
+				CED80E482A17FEC2009F3569 /* HomeViewModel.swift in Sources */,
 				CED80DC42A129C7E009F3569 /* BaseMVVMSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

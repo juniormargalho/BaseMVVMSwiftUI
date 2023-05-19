@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginViewState: Equatable {
     var isLoading = false
     var hasError = false
+    var hasSuccess = false
     var errorMessage = ""
     var userEmail = ""
     var userPassword = ""
@@ -36,6 +37,11 @@ final class LoginViewModel: ObservableObject {
                 set: { self.state.hasError = $0 })
     }
     
+    var hasSuccessBinding: Binding<Bool> {
+        Binding(get: { self.state.hasSuccess },
+                set: { self.state.hasSuccess = $0 })
+    }
+    
     init(state: LoginViewState = .init(),
          service: LoginServiceProtocol = LoginService()) {
         self.state = state
@@ -54,6 +60,9 @@ final class LoginViewModel: ObservableObject {
                 if let avatar = model.userAvatar {
                     self?.state.userAvatar = avatar
                 }
+                let sessionModel = SessionModel(userName: model.userName)
+                SessionManager().startSession(with: sessionModel)
+                self?.state.hasSuccess = true
             case .failure(_):
                 self?.state.isLoading = false
                 self?.state.hasError = true
@@ -63,6 +72,6 @@ final class LoginViewModel: ObservableObject {
     }
     
     func isDisabledButton() -> Bool {
-        return state.userPassword.isEmpty || state.userPassword.isEmpty
+        return state.userPassword.isEmpty || state.userPassword.isEmpty || state.isLoading
     }
 }

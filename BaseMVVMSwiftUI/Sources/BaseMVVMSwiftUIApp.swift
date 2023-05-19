@@ -12,7 +12,11 @@ struct BaseMVVMSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                LoginView()
+                if SessionManager.shared.hasSession {
+                    HomeView()
+                } else {
+                    LoginView()
+                }
             }
         }
     }
