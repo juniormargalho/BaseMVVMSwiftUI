@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LoginView: View {
-    @EnvironmentObject var sessionManager: SessionManager
     @StateObject var viewModel: LoginViewModel = .init()
     @State private var isGoToForgotPassword = false
     
@@ -66,9 +65,7 @@ struct LoginView: View {
                     .padding(.top, 4)
                     Spacer()
                     Button {
-                        viewModel.login() { model in
-                            sessionManager.session = model
-                        }
+                        viewModel.login()
                     } label: {
                         labelButtonContinue
                     }
@@ -84,14 +81,10 @@ struct LoginView: View {
                       message: Text(viewModel.state.errorMessage)
                 )
             }
-            
+
             NavigationLink(
                 destination: ForgotPasswordViewControllerRepresentable(),
                 isActive: $isGoToForgotPassword) {}
-            
-            NavigationLink(
-                destination: HomeView(),
-                isActive: viewModel.hasSuccessBinding) {}
         }
     }
 }

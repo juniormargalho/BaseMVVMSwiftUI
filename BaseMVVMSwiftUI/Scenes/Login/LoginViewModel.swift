@@ -10,7 +10,6 @@ import SwiftUI
 struct LoginViewState: Equatable {
     var isLoading = false
     var hasError = false
-    var hasSuccess = false
     var errorMessage = ""
     var userEmail = ""
     var userPassword = ""
@@ -37,18 +36,13 @@ final class LoginViewModel: ObservableObject {
                 set: { self.state.hasError = $0 })
     }
     
-    var hasSuccessBinding: Binding<Bool> {
-        Binding(get: { self.state.hasSuccess },
-                set: { self.state.hasSuccess = $0 })
-    }
-    
     init(state: LoginViewState = .init(),
          service: LoginServiceProtocol = LoginService()) {
         self.state = state
         self.service = service
     }
     
-    func login(completion: @escaping (SessionModel) -> Void?) {
+    func login() {
         state.isLoading = true
         let model = LoginRequestModel(email: state.userEmail,
                                       password: state.userPassword)
@@ -60,9 +54,8 @@ final class LoginViewModel: ObservableObject {
                 if let avatar = model.userAvatar {
                     self?.state.userAvatar = avatar
                 }
-                self?.state.hasSuccess = true
                 let sessionModel = SessionModel(userName: model.userName)
-                completion(sessionModel)
+                SessionManager.shared.startSession(with: sessionModel)
             case .failure(_):
                 self?.state.isLoading = false
                 self?.state.hasError = true

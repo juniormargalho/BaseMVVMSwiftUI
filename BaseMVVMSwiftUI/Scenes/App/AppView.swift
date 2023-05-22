@@ -12,10 +12,10 @@ struct AppView: View {
     
     var body: some View {
         Group {
-            if sessionManager.session == nil {
-                LoginView()
-            } else {
+            if sessionManager.state.hasSession {
                 HomeView()
+            } else {
+                LoginView()
             }
         }
     }

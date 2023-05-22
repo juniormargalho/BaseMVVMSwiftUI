@@ -12,7 +12,7 @@ struct BaseMVVMSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                AppView().environmentObject(SessionManager())
+                AppView().environmentObject(SessionManager.shared)
             }
         }
     }

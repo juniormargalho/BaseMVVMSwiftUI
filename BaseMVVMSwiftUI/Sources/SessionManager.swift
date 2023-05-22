@@ -7,18 +7,30 @@
 
 import Foundation
 
+enum KeysGeneral: String {
+    case token = "keyGeneralToken"
+    case hasSession = "keyGeneralHasSession"
+}
+
+enum KeysUser: String {
+    case userName = "keyUserName"
+}
+
+struct SessionState {
+    var hasSession: Bool {
+        set {
+            UserDefaults.standard.set(newValue, forKey: KeysGeneral.hasSession.rawValue)
+        }
+        get {
+            UserDefaults.standard.bool(forKey: KeysGeneral.hasSession.rawValue)
+        }
+    }
+}
+
 final class SessionManager: ObservableObject {
-    @Published var session: SessionModel?
     static let shared = SessionManager()
-    
-    enum KeysGeneral: String {
-        case token = "keyGeneralToken"
-    }
-    
-    enum KeysUser: String {
-        case userName = "keyUserName"
-    }
-    
+    @Published var state: SessionState = .init()
+
     var token: String? {
         set {
             UserDefaults.standard.set(newValue, forKey: KeysGeneral.token.rawValue)
@@ -42,12 +54,12 @@ final class SessionManager: ObservableObject {
             self.userName = userName
         }
         token = UUID().uuidString
-        session = model
+        state.hasSession = true
     }
     
     func endSession() {
         UserDefaults.standard.removeObject(forKey: KeysGeneral.token.rawValue)
         UserDefaults.standard.removeObject(forKey: KeysUser.userName.rawValue)
-        session = nil
+        state.hasSession = false
     }
 }

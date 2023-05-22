@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var sessionManager: SessionManager
     @StateObject var viewModel: HomeViewModel = .init()
     
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
-                Text("Bem vindo, \(sessionManager.session?.userName ?? "")")
+                Text("Bem vindo, \(viewModel.state.userName)")
                 Spacer()
                 Button {
-                    sessionManager.endSession()
+                    viewModel.logout()
                 } label: {
                     Text("Sair")
                         .font(Font.system(size: 12))
