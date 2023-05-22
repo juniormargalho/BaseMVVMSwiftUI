@@ -19,7 +19,7 @@ final class HomeViewModel: ObservableObject {
     }
     
     func fetchHome() {
-        if let userName = SessionManager.shared.userName {
+        if let userName = SessionManager.shared.state.userName {
             state.userName = userName
         }
     }

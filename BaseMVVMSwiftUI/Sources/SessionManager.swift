@@ -25,12 +25,7 @@ struct SessionState {
             UserDefaults.standard.bool(forKey: KeysGeneral.hasSession.rawValue)
         }
     }
-}
-
-final class SessionManager: ObservableObject {
-    static let shared = SessionManager()
-    @Published var state: SessionState = .init()
-
+    
     var token: String? {
         set {
             UserDefaults.standard.set(newValue, forKey: KeysGeneral.token.rawValue)
@@ -48,12 +43,17 @@ final class SessionManager: ObservableObject {
             UserDefaults.standard.string(forKey: KeysUser.userName.rawValue)
         }
     }
-    
+}
+
+final class SessionManager: ObservableObject {
+    static let shared = SessionManager()
+    @Published var state: SessionState = .init()
+
     func startSession(with model: SessionModel) {
         if let userName: String = model.userName {
-            self.userName = userName
+            state.userName = userName
         }
-        token = UUID().uuidString
+        state.token = UUID().uuidString
         state.hasSession = true
     }
     
