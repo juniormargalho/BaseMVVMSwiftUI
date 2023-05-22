@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var sessionManager: SessionManager
     @StateObject var viewModel: LoginViewModel = .init()
     @State private var isGoToForgotPassword = false
     
@@ -65,7 +66,9 @@ struct LoginView: View {
                     .padding(.top, 4)
                     Spacer()
                     Button {
-                        viewModel.login()
+                        viewModel.login() { model in
+                            sessionManager.session = model
+                        }
                     } label: {
                         labelButtonContinue
                     }

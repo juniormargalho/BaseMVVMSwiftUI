@@ -48,7 +48,7 @@ final class LoginViewModel: ObservableObject {
         self.service = service
     }
     
-    func login() {
+    func login(completion: @escaping (SessionModel) -> Void?) {
         state.isLoading = true
         let model = LoginRequestModel(email: state.userEmail,
                                       password: state.userPassword)
@@ -60,9 +60,9 @@ final class LoginViewModel: ObservableObject {
                 if let avatar = model.userAvatar {
                     self?.state.userAvatar = avatar
                 }
-                let sessionModel = SessionModel(userName: model.userName)
-                SessionManager().startSession(with: sessionModel)
                 self?.state.hasSuccess = true
+                let sessionModel = SessionModel(userName: model.userName)
+                completion(sessionModel)
             case .failure(_):
                 self?.state.isLoading = false
                 self?.state.hasError = true

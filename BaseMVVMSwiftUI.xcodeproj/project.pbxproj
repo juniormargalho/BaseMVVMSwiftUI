@@ -27,6 +27,7 @@
 		CED80E432A17F47B009F3569 /* SessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E422A17F47B009F3569 /* SessionModel.swift */; };
 		CED80E462A17FD75009F3569 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E452A17FD75009F3569 /* HomeView.swift */; };
 		CED80E482A17FEC2009F3569 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E472A17FEC2009F3569 /* HomeViewModel.swift */; };
+		CED80E4B2A1BA0AD009F3569 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E4A2A1BA0AD009F3569 /* AppView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		CED80E422A17F47B009F3569 /* SessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionModel.swift; sourceTree = "<group>"; };
 		CED80E452A17FD75009F3569 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CED80E472A17FEC2009F3569 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CED80E4A2A1BA0AD009F3569 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		CED80DD12A129D3F009F3569 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CED80E492A1BA098009F3569 /* App */,
 				CED80E442A17FD57009F3569 /* Home */,
 				CED80DE32A12CB43009F3569 /* ForgotPassword */,
 				CED80DD32A129D79009F3569 /* Login */,
@@ -228,6 +231,14 @@
 				CED80E452A17FD75009F3569 /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CED80E492A1BA098009F3569 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CED80E4A2A1BA0AD009F3569 /* AppView.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				CED80E462A17FD75009F3569 /* HomeView.swift in Sources */,
 				CED80DE92A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift in Sources */,
 				CED80E402A17F11D009F3569 /* SessionManager.swift in Sources */,
+				CED80E4B2A1BA0AD009F3569 /* AppView.swift in Sources */,
 				CED80DD52A129DBE009F3569 /* LoginView.swift in Sources */,
 				CED80DDF2A12A1F9009F3569 /* LoginResponseModel.swift in Sources */,
 				CED80DEE2A13CCF2009F3569 /* NavigationUtil.swift in Sources */,

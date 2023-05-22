@@ -16,7 +16,7 @@ final class LoginService: LoginServiceProtocol {
     func postLogin(model: LoginRequestModel,
                    completion: @escaping (Result<LoginResponseModel, Error>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if model.email == "user@email.com" && model.password == "123456" {
+            if model.email == "email" && model.password == "123" {
                 let model = LoginResponseModel(userName: "Usuário")
                 completion(.success(model))
             } else {

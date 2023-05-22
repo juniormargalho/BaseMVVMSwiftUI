@@ -8,7 +8,6 @@
 import Foundation
 
 struct HomeViewState {
-    var userName = ""
 }
 
 final class HomeViewModel: ObservableObject {
@@ -19,8 +18,5 @@ final class HomeViewModel: ObservableObject {
     }
     
     func fetchHome() {
-        if let userName = SessionManager.shared.userName {
-            state.userName = userName
-        }
     }
 }
