@@ -14,6 +14,7 @@ struct BaseMVVMSwiftUIApp: App {
             NavigationView {
                 AppView().environmentObject(SessionManager.shared)
             }
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

@@ -65,6 +65,6 @@ final class LoginViewModel: ObservableObject {
     }
     
     func isDisabledButton() -> Bool {
-        return state.userPassword.isEmpty || state.userPassword.isEmpty || state.isLoading
+        return state.userEmail.isEmpty || state.userPassword.isEmpty || state.isLoading
     }
 }

@@ -28,6 +28,7 @@
 		CED80E462A17FD75009F3569 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E452A17FD75009F3569 /* HomeView.swift */; };
 		CED80E482A17FEC2009F3569 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E472A17FEC2009F3569 /* HomeViewModel.swift */; };
 		CED80E4B2A1BA0AD009F3569 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E4A2A1BA0AD009F3569 /* AppView.swift */; };
+		CED80E532A1D5B49009F3569 /* BMTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E522A1D5B49009F3569 /* BMTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		CED80E452A17FD75009F3569 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CED80E472A17FEC2009F3569 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CED80E4A2A1BA0AD009F3569 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		CED80E522A1D5B49009F3569 /* BMTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		CED80DEC2A13CCB7009F3569 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				CED80E502A1D5AE7009F3569 /* Components */,
 				CED80E412A17F45B009F3569 /* Models */,
 				CED80DE12A12B4E3009F3569 /* LoadingView.swift */,
 				CED80DEA2A13BFF6009F3569 /* SuccessView.swift */,
@@ -239,6 +242,22 @@
 				CED80E4A2A1BA0AD009F3569 /* AppView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		CED80E502A1D5AE7009F3569 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CED80E512A1D5AF3009F3569 /* BMTextField */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CED80E512A1D5AF3009F3569 /* BMTextField */ = {
+			isa = PBXGroup;
+			children = (
+				CED80E522A1D5B49009F3569 /* BMTextFieldView.swift */,
+			);
+			path = BMTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +377,7 @@
 				CED80DEB2A13BFF6009F3569 /* SuccessView.swift in Sources */,
 				CED80DE22A12B4E3009F3569 /* LoadingView.swift in Sources */,
 				CED80E482A17FEC2009F3569 /* HomeViewModel.swift in Sources */,
+				CED80E532A1D5B49009F3569 /* BMTextFieldView.swift in Sources */,
 				CED80DC42A129C7E009F3569 /* BaseMVVMSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,8 +26,8 @@ struct HomeView: View {
             .padding(.top, 20)
             Spacer()
         }
+        .navigationBarHidden(true)
         .padding([.leading, .trailing], 20)
-        .navigationTitle("HOME")
         .onAppear(perform: {
             viewModel.fetchHome()
         })
@@ -36,6 +36,9 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        NavigationView {
+            let state = HomeViewState(userName: "Usuario Preview")
+            HomeView(viewModel: HomeViewModel(state: state))
+        }
     }
 }

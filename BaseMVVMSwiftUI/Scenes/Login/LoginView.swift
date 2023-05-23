@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @StateObject var viewModel: LoginViewModel = .init()
     @State private var isGoToForgotPassword = false
+    @State private var textErrorPassword: String = ""
+    @State private var textErrorEmail: String = ""
     
     // MARK: Body
     var body: some View {
@@ -23,36 +25,14 @@ struct LoginView: View {
                     Text("Acessar conta")
                         .font(Font.system(size: 24, weight: .medium))
                         .padding(.top, 40)
-                    VStack(spacing: 0) {
-                        HStack(spacing: 0) {
-                            Text("Email")
-                                .font(Font.system(size: 14, weight: .medium))
-                            Spacer()
-                        }
-                        TextField("Email", text: viewModel.userEmailBinding)
-                            .frame(height: 40)
-                            .keyboardType(.emailAddress)
-                            .autocapitalization(.none)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 4)
-                                    .stroke(.black, lineWidth: 1))
-                    }
-                    .padding([.leading, .trailing], 20)
+                    BMTextFieldView(textTitle: "Email",
+                                    text: viewModel.userEmailBinding,
+                                    textError: textErrorEmail)
                     .padding(.top, 40)
-                    VStack(spacing: 0) {
-                        HStack(spacing: 0) {
-                            Text("Senha")
-                                .font(Font.system(size: 14, weight: .medium))
-                            Spacer()
-                        }
-                        SecureField("Senha", text: viewModel.userPasswordBinding)
-                            .frame(height: 40)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 4)
-                                    .stroke(.black, lineWidth: 1))
-                    }
-                    .padding([.leading, .trailing], 20)
-                    .padding(.top, 20)
+                    BMTextFieldView(textTitle: "Senha",
+                                    text: viewModel.userPasswordBinding,
+                                    textError: textErrorPassword,
+                                    isSecuryType: true)
                     HStack(spacing: 0) {
                         Spacer()
                         Button {
@@ -61,20 +41,29 @@ struct LoginView: View {
                             labelButtonForgotPassword
                         }
                     }
-                    .padding([.leading, .trailing], 20)
-                    .padding(.top, 4)
                     Spacer()
+                    HStack(spacing: 0) {
+                        Text("Não tem uma conta? ")
+                            .font(Font.system(size: 12, weight: .medium))
+                            .foregroundColor(.black)
+                        Button {
+
+                        } label: {
+                            labelButtonSubscribe
+                        }
+                    }
+                    .padding(.bottom, 12)
                     Button {
                         viewModel.login()
                     } label: {
                         labelButtonContinue
                     }
-                    .padding([.leading, .trailing], 20)
                     .disabled(viewModel.isDisabledButton())
                 } else {
                     LoadingView()
                 }
             }
+            .padding(.horizontal, 20)
             .navigationBarHidden(true)
             .alert(isPresented: viewModel.hasErrorBinding) {
                 Alert(title: Text("Erro!"),
@@ -105,6 +94,12 @@ extension LoginView {
         Text("Esqueci minha senha")
             .font(Font.system(size: 12, weight: .medium))
             .foregroundColor(.black)
+    }
+    
+    private var labelButtonSubscribe: some View {
+        Text("Inscreva-se")
+            .font(Font.system(size: 12, weight: .medium))
+            .foregroundColor(.blue)
     }
 }
 
