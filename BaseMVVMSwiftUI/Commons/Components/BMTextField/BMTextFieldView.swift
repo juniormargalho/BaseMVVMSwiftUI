@@ -11,10 +11,10 @@ struct BMTextFieldView: View {
     var textTitle: String
     @Binding var text: String
     var textError = ""
-    var isSecuryType = false
+    var isSecureType = false
     var primaryColor = Color.primary
     var secondaryColor = Color.secondary
-    @State private var isSecureTextEntry: Bool = true
+    @State private var isSecureTextEntry: Bool = false
     
     var body: some View {
         VStack(spacing: 2) {
@@ -36,13 +36,16 @@ struct BMTextFieldView: View {
                         .disableAutocorrection(true)
                         .accentColor(primaryColor)
                 }
-                if isSecuryType {
+                if isSecureType {
                     Button(action: {
                         isSecureTextEntry.toggle()
                     }) {
                         Image(systemName: isSecureTextEntry ? "eye.slash" : "eye")
                     }
                     .accentColor(secondaryColor)
+                    .onAppear {
+                        isSecureTextEntry.toggle()
+                    }
                 }
             }
             .padding(.horizontal, 8)
@@ -64,6 +67,6 @@ struct BMTextFieldView_Previews: PreviewProvider {
     static var previews: some View {
         BMTextFieldView(textTitle: "Senha",
                         text: .constant(""),
-                        isSecuryType: true)
+                        isSecureType: true)
     }
 }

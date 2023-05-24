@@ -32,7 +32,7 @@ struct LoginView: View {
                     BMTextFieldView(textTitle: "Senha",
                                     text: viewModel.userPasswordBinding,
                                     textError: textErrorPassword,
-                                    isSecuryType: true)
+                                    isSecureType: true)
                     HStack(spacing: 0) {
                         Spacer()
                         Button {
@@ -53,12 +53,10 @@ struct LoginView: View {
                         }
                     }
                     .padding(.bottom, 12)
-                    Button {
+                    BMButtonView(title: "Continuar",
+                                 isDisabled: viewModel.isDisabledButton()) {
                         viewModel.login()
-                    } label: {
-                        labelButtonContinue
                     }
-                    .disabled(viewModel.isDisabledButton())
                 } else {
                     LoadingView()
                 }
@@ -80,16 +78,6 @@ struct LoginView: View {
 
 // MARK: Extension
 extension LoginView {
-    private var labelButtonContinue: some View {
-        Text("Continuar")
-            .font(Font.system(size: 16, weight: .bold))
-            .foregroundColor(.white)
-            .frame(height: 40)
-            .frame(maxWidth: .infinity)
-            .background(viewModel.isDisabledButton() ? Color.gray : Color.black)
-            .cornerRadius(4)
-    }
-    
     private var labelButtonForgotPassword: some View {
         Text("Esqueci minha senha")
             .font(Font.system(size: 12, weight: .medium))

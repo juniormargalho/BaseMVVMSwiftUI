@@ -29,6 +29,7 @@
 		CED80E482A17FEC2009F3569 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E472A17FEC2009F3569 /* HomeViewModel.swift */; };
 		CED80E4B2A1BA0AD009F3569 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E4A2A1BA0AD009F3569 /* AppView.swift */; };
 		CED80E532A1D5B49009F3569 /* BMTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E522A1D5B49009F3569 /* BMTextFieldView.swift */; };
+		CEE267AA2A1E86750016C55F /* BMButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE267A92A1E86750016C55F /* BMButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		CED80E472A17FEC2009F3569 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CED80E4A2A1BA0AD009F3569 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		CED80E522A1D5B49009F3569 /* BMTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldView.swift; sourceTree = "<group>"; };
+		CEE267A92A1E86750016C55F /* BMButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				CED80E522A1D5B49009F3569 /* BMTextFieldView.swift */,
+				CEE267A92A1E86750016C55F /* BMButtonView.swift */,
 			);
 			path = BMTextField;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED80DD72A129FEE009F3569 /* LoginViewModel.swift in Sources */,
+				CEE267AA2A1E86750016C55F /* BMButtonView.swift in Sources */,
 				CED80E462A17FD75009F3569 /* HomeView.swift in Sources */,
 				CED80DE92A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift in Sources */,
 				CED80E402A17F11D009F3569 /* SessionManager.swift in Sources */,
