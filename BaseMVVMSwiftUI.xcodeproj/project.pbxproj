@@ -30,6 +30,14 @@
 		CED80E4B2A1BA0AD009F3569 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E4A2A1BA0AD009F3569 /* AppView.swift */; };
 		CED80E532A1D5B49009F3569 /* BMTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED80E522A1D5B49009F3569 /* BMTextFieldView.swift */; };
 		CEE267AA2A1E86750016C55F /* BMButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE267A92A1E86750016C55F /* BMButtonView.swift */; };
+		CEE70B462A1FCEBA00DA0A0D /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE70B452A1FCEBA00DA0A0D /* SignupView.swift */; };
+		CEE70B482A1FCED400DA0A0D /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE70B472A1FCED400DA0A0D /* SignupViewModel.swift */; };
+		CEE70B4D2A1FEB7F00DA0A0D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE70B4C2A1FEB7F00DA0A0D /* RoundedCorner.swift */; };
+		CEE70B502A1FEBD300DA0A0D /* Extension + View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE70B4F2A1FEBD300DA0A0D /* Extension + View.swift */; };
+		CEE70B562A1FF5DD00DA0A0D /* HalfModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE70B552A1FF5DD00DA0A0D /* HalfModalView.swift */; };
+		CEE70B582A1FF64400DA0A0D /* ErrorSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE70B572A1FF64400DA0A0D /* ErrorSheetView.swift */; };
+		CEE70B5A2A20069800DA0A0D /* Extension + UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE70B592A20069800DA0A0D /* Extension + UIApplication.swift */; };
+		CEE70B5C2A201A6100DA0A0D /* BMSecureTextFIeldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE70B5B2A201A6100DA0A0D /* BMSecureTextFIeldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +76,14 @@
 		CED80E4A2A1BA0AD009F3569 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		CED80E522A1D5B49009F3569 /* BMTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMTextFieldView.swift; sourceTree = "<group>"; };
 		CEE267A92A1E86750016C55F /* BMButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButtonView.swift; sourceTree = "<group>"; };
+		CEE70B452A1FCEBA00DA0A0D /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		CEE70B472A1FCED400DA0A0D /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		CEE70B4C2A1FEB7F00DA0A0D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		CEE70B4F2A1FEBD300DA0A0D /* Extension + View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + View.swift"; sourceTree = "<group>"; };
+		CEE70B552A1FF5DD00DA0A0D /* HalfModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalView.swift; sourceTree = "<group>"; };
+		CEE70B572A1FF64400DA0A0D /* ErrorSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorSheetView.swift; sourceTree = "<group>"; };
+		CEE70B592A20069800DA0A0D /* Extension + UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIApplication.swift"; sourceTree = "<group>"; };
+		CEE70B5B2A201A6100DA0A0D /* BMSecureTextFIeldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMSecureTextFIeldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +149,7 @@
 				CED80E442A17FD57009F3569 /* Home */,
 				CED80DE32A12CB43009F3569 /* ForgotPassword */,
 				CED80DD32A129D79009F3569 /* Login */,
+				CEE70B442A1FCE8100DA0A0D /* Signup */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -195,11 +212,11 @@
 		CED80DEC2A13CCB7009F3569 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				CEE70B602A20EB5300DA0A0D /* Views */,
+				CEE70B5F2A20EB3800DA0A0D /* Utilities */,
+				CEE70B4E2A1FEBC000DA0A0D /* Extensions */,
 				CED80E502A1D5AE7009F3569 /* Components */,
 				CED80E412A17F45B009F3569 /* Models */,
-				CED80DE12A12B4E3009F3569 /* LoadingView.swift */,
-				CED80DEA2A13BFF6009F3569 /* SuccessView.swift */,
-				CED80DED2A13CCF2009F3569 /* NavigationUtil.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -250,6 +267,8 @@
 			isa = PBXGroup;
 			children = (
 				CED80E512A1D5AF3009F3569 /* BMTextField */,
+				CEE70B5E2A201A8500DA0A0D /* BMSecureTextFIeld */,
+				CEE70B492A1FD35100DA0A0D /* BMButton */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -258,9 +277,62 @@
 			isa = PBXGroup;
 			children = (
 				CED80E522A1D5B49009F3569 /* BMTextFieldView.swift */,
-				CEE267A92A1E86750016C55F /* BMButtonView.swift */,
 			);
 			path = BMTextField;
+			sourceTree = "<group>";
+		};
+		CEE70B442A1FCE8100DA0A0D /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				CEE70B472A1FCED400DA0A0D /* SignupViewModel.swift */,
+				CEE70B452A1FCEBA00DA0A0D /* SignupView.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		CEE70B492A1FD35100DA0A0D /* BMButton */ = {
+			isa = PBXGroup;
+			children = (
+				CEE267A92A1E86750016C55F /* BMButtonView.swift */,
+			);
+			path = BMButton;
+			sourceTree = "<group>";
+		};
+		CEE70B4E2A1FEBC000DA0A0D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEE70B4F2A1FEBD300DA0A0D /* Extension + View.swift */,
+				CEE70B592A20069800DA0A0D /* Extension + UIApplication.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEE70B5E2A201A8500DA0A0D /* BMSecureTextFIeld */ = {
+			isa = PBXGroup;
+			children = (
+				CEE70B5B2A201A6100DA0A0D /* BMSecureTextFIeldView.swift */,
+			);
+			path = BMSecureTextFIeld;
+			sourceTree = "<group>";
+		};
+		CEE70B5F2A20EB3800DA0A0D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CED80DED2A13CCF2009F3569 /* NavigationUtil.swift */,
+				CEE70B4C2A1FEB7F00DA0A0D /* RoundedCorner.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CEE70B602A20EB5300DA0A0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CED80DE12A12B4E3009F3569 /* LoadingView.swift */,
+				CED80DEA2A13BFF6009F3569 /* SuccessView.swift */,
+				CEE70B552A1FF5DD00DA0A0D /* HalfModalView.swift */,
+				CEE70B572A1FF64400DA0A0D /* ErrorSheetView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,17 +437,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE70B462A1FCEBA00DA0A0D /* SignupView.swift in Sources */,
 				CED80DD72A129FEE009F3569 /* LoginViewModel.swift in Sources */,
 				CEE267AA2A1E86750016C55F /* BMButtonView.swift in Sources */,
 				CED80E462A17FD75009F3569 /* HomeView.swift in Sources */,
+				CEE70B5C2A201A6100DA0A0D /* BMSecureTextFIeldView.swift in Sources */,
+				CEE70B562A1FF5DD00DA0A0D /* HalfModalView.swift in Sources */,
 				CED80DE92A12CC10009F3569 /* ForgotPasswordViewControllerRepresentable.swift in Sources */,
 				CED80E402A17F11D009F3569 /* SessionManager.swift in Sources */,
+				CEE70B4D2A1FEB7F00DA0A0D /* RoundedCorner.swift in Sources */,
+				CEE70B482A1FCED400DA0A0D /* SignupViewModel.swift in Sources */,
 				CED80E4B2A1BA0AD009F3569 /* AppView.swift in Sources */,
 				CED80DD52A129DBE009F3569 /* LoginView.swift in Sources */,
 				CED80DDF2A12A1F9009F3569 /* LoginResponseModel.swift in Sources */,
 				CED80DEE2A13CCF2009F3569 /* NavigationUtil.swift in Sources */,
+				CEE70B582A1FF64400DA0A0D /* ErrorSheetView.swift in Sources */,
 				CED80DD92A12A000009F3569 /* LoginService.swift in Sources */,
 				CED80DDD2A12A1C1009F3569 /* LoginRequestModel.swift in Sources */,
+				CEE70B5A2A20069800DA0A0D /* Extension + UIApplication.swift in Sources */,
+				CEE70B502A1FEBD300DA0A0D /* Extension + View.swift in Sources */,
 				CED80DE62A12CB64009F3569 /* ForgotPasswordViewController.swift in Sources */,
 				CED80E432A17F47B009F3569 /* SessionModel.swift in Sources */,
 				CED80DEB2A13BFF6009F3569 /* SuccessView.swift in Sources */,

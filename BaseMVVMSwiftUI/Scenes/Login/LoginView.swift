@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @StateObject var viewModel: LoginViewModel = .init()
     @State private var isGoToForgotPassword = false
+    @State private var isGoToSignup = false
     @State private var textErrorPassword: String = ""
     @State private var textErrorEmail: String = ""
     
@@ -29,16 +30,17 @@ struct LoginView: View {
                                     text: viewModel.userEmailBinding,
                                     textError: textErrorEmail)
                     .padding(.top, 40)
-                    BMTextFieldView(textTitle: "Senha",
-                                    text: viewModel.userPasswordBinding,
-                                    textError: textErrorPassword,
-                                    isSecureType: true)
+                    BMSecureTextFIeldView(textTitle: "Senha",
+                                          text: viewModel.userPasswordBinding,
+                                          textError: textErrorPassword)
                     HStack(spacing: 0) {
                         Spacer()
                         Button {
                             isGoToForgotPassword.toggle()
                         } label: {
-                            labelButtonForgotPassword
+                            Text("Esqueci minha senha")
+                                .font(Font.system(size: 12, weight: .medium))
+                                .foregroundColor(.black)
                         }
                     }
                     Spacer()
@@ -47,9 +49,11 @@ struct LoginView: View {
                             .font(Font.system(size: 12, weight: .medium))
                             .foregroundColor(.black)
                         Button {
-
+                            isGoToSignup.toggle()
                         } label: {
-                            labelButtonSubscribe
+                            Text("Inscreva-se")
+                                .font(Font.system(size: 12, weight: .medium))
+                                .foregroundColor(.blue)
                         }
                     }
                     .padding(.bottom, 12)
@@ -72,22 +76,11 @@ struct LoginView: View {
             NavigationLink(
                 destination: ForgotPasswordViewControllerRepresentable(),
                 isActive: $isGoToForgotPassword) {}
+            
+            NavigationLink(
+                destination: SignupView(),
+                isActive: $isGoToSignup) {}
         }
-    }
-}
-
-// MARK: Extension
-extension LoginView {
-    private var labelButtonForgotPassword: some View {
-        Text("Esqueci minha senha")
-            .font(Font.system(size: 12, weight: .medium))
-            .foregroundColor(.black)
-    }
-    
-    private var labelButtonSubscribe: some View {
-        Text("Inscreva-se")
-            .font(Font.system(size: 12, weight: .medium))
-            .foregroundColor(.blue)
     }
 }
 

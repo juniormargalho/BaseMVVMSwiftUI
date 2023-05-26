@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel = .init()
+    private let colors: [Color] = [.purple, .green, .blue, .yellow]
     
     var body: some View {
         VStack(spacing: 0) {
@@ -21,6 +22,19 @@ struct HomeView: View {
                     Text("Sair")
                         .font(Font.system(size: 12))
                         .foregroundColor(.red)
+                }
+            }
+            .padding(.top, 20)
+            GeometryReader { geometry in
+                let screenWidth = geometry.size.width
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 0) {
+                        ForEach(colors, id: \.self) { color in
+                            Rectangle()
+                                .foregroundColor(color)
+                                .frame(width: screenWidth, height: 140)
+                        }
+                    }
                 }
             }
             .padding(.top, 20)

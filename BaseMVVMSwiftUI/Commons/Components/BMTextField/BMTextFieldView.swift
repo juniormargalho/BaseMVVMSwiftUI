@@ -11,52 +11,38 @@ struct BMTextFieldView: View {
     var textTitle: String
     @Binding var text: String
     var textError = ""
-    var isSecureType = false
-    var primaryColor = Color.primary
-    var secondaryColor = Color.secondary
-    @State private var isSecureTextEntry: Bool = false
+    var fontTitle: Font = Font.system(size: 16, weight: .semibold)
+    var fontError: Font = Font.system(size: 14, weight: .regular)
+    var primaryColor: Color = .black
+    var secondaryColor: Color = .gray
+    var tertiaryColor: Color = .red
+    var keyboardType: UIKeyboardType = .default
     
     var body: some View {
         VStack(spacing: 2) {
             HStack {
                 Text(textTitle)
-                    .font(Font.system(size: 16))
+                    .font(fontTitle)
                     .foregroundColor(primaryColor)
                 Spacer()
             }
             HStack {
-                if isSecureTextEntry {
-                    SecureField(textTitle, text: $text)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
-                        .accentColor(primaryColor)
-                } else {
-                    TextField(textTitle, text: $text)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
-                        .accentColor(primaryColor)
-                }
-                if isSecureType {
-                    Button(action: {
-                        isSecureTextEntry.toggle()
-                    }) {
-                        Image(systemName: isSecureTextEntry ? "eye.slash" : "eye")
-                    }
-                    .accentColor(secondaryColor)
-                    .onAppear {
-                        isSecureTextEntry.toggle()
-                    }
-                }
+                TextField(textTitle, text: $text)
+                    .autocapitalization(.none)
+                    .disableAutocorrection(true)
+                    .accentColor(primaryColor)
+                    .keyboardType(keyboardType)
             }
             .padding(.horizontal, 8)
             .frame(height: 40)
             .overlay(
                 RoundedRectangle(cornerRadius: 4)
-                    .stroke(secondaryColor, lineWidth: 2))
+                    .stroke(textError == "" ? secondaryColor : tertiaryColor, lineWidth: 2))
             HStack {
                 Text(textError)
-                    .font(Font.system(size: 12))
-                    .foregroundColor(.red)
+                    .font(fontError)
+                    .foregroundColor(tertiaryColor)
+                    .padding(.leading, 8)
                 Spacer()
             }
         }
@@ -65,8 +51,8 @@ struct BMTextFieldView: View {
 
 struct BMTextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        BMTextFieldView(textTitle: "Senha",
-                        text: .constant(""),
-                        isSecureType: true)
+        BMTextFieldView(textTitle: "Nome",
+                        text: .constant("Meu Nome"),
+                        textError: "")
     }
 }

@@ -72,6 +72,5 @@ struct BMButtonView_Previews: PreviewProvider {
                          primaryColor: .red,
                          didTouchButton: {})
         }
-        .padding()
     }
 }
