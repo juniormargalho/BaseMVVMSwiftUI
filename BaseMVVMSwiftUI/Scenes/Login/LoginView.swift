@@ -61,6 +61,7 @@ struct LoginView: View {
                                  isDisabled: viewModel.isDisabledButton()) {
                         viewModel.login()
                     }
+                    .padding(.bottom, 20)
                 } else {
                     LoadingView()
                 }
@@ -71,6 +72,9 @@ struct LoginView: View {
                 Alert(title: Text("Erro!"),
                       message: Text(viewModel.state.errorMessage)
                 )
+            }
+            .onTapGesture {
+                UIApplication.shared.endEditing()
             }
 
             NavigationLink(

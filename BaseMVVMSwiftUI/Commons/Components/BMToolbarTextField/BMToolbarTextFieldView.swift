@@ -1,16 +1,17 @@
 //
-//  BMTextFieldView.swift
+//  BMToolbarTextFieldView.swift
 //  BaseMVVMSwiftUI
 //
-//  Created by Junior Margalho on 23/05/23.
+//  Created by Junior Margalho on 26/05/23.
 //
 
 import SwiftUI
 
-struct BMTextFieldView: View {
+struct BMToolbarTextFieldView: View {
     var textTitle: String
     @Binding var text: String
-    var textError: String = ""
+    @Binding var isFocused: Bool
+    var textError = ""
     var fontTitle: Font = Font.system(size: 16, weight: .semibold)
     var fontError: Font = Font.system(size: 14, weight: .regular)
     var primaryColor: Color = .black
@@ -32,6 +33,18 @@ struct BMTextFieldView: View {
                     .disableAutocorrection(true)
                     .accentColor(primaryColor)
                     .keyboardType(keyboardType)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            if isFocused {
+                                Text(text.formatAddBetweenCharacters(" "))
+                                    .font(fontTitle)
+                                    .foregroundColor(secondaryColor)
+                            }
+                        }
+                    }
+                    .onTapGesture {
+                        isFocused = true
+                    }
             }
             .padding(.horizontal, 8)
             .frame(height: 40)
@@ -49,10 +62,10 @@ struct BMTextFieldView: View {
     }
 }
 
-struct BMTextFieldView_Previews: PreviewProvider {
+struct BMToolbarTextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        BMTextFieldView(textTitle: "Nome",
-                        text: .constant("Meu Nome"),
-                        textError: "")
+        BMToolbarTextFieldView(textTitle: "Title",
+                               text: .constant("Text"),
+                               isFocused: .constant(true))
     }
 }

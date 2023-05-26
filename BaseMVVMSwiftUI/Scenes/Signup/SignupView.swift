@@ -11,6 +11,7 @@ struct SignupView: View {
     @StateObject var viewModel: SignupViewModel = .init()
     @State private var textErrorName: String = ""
     @State private var username = ""
+    @State private var isFocusedPhone: Bool = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -18,10 +19,14 @@ struct SignupView: View {
                 BMTextFieldView(textTitle: "Nome",
                                 text: viewModel.userNameBinding,
                                 textError: viewModel.state.textErrorName)
-                BMTextFieldView(textTitle: "Telefone",
-                                text: viewModel.userPhoneBinding,
-                                textError: viewModel.state.textErrorPhone,
-                                keyboardType: .decimalPad)
+                BMToolbarTextFieldView(textTitle: "Telefone",
+                                       text: viewModel.userPhoneBinding,
+                                       isFocused: $isFocusedPhone,
+                                       keyboardType: .numberPad)
+                BMTextFieldView(textTitle: "Email",
+                                text: viewModel.userEmailBinding,
+                                textError: viewModel.state.textErrorEmail,
+                                keyboardType: .emailAddress)
             }
             .padding(.top, 40)
             Spacer()
@@ -29,9 +34,14 @@ struct SignupView: View {
                          isDisabled: viewModel.isDisabledButton()) {
                 
             }
+            .padding(.bottom, 20)
         }
         .padding(.horizontal, 20)
         .navigationTitle("Inscreva-se")
+        .onTapGesture {
+            isFocusedPhone = false
+            UIApplication.shared.endEditing()
+        }
     }
 }
 

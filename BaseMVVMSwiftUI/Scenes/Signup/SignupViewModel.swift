@@ -10,8 +10,10 @@ import SwiftUI
 struct SignupViewState {
     var userName = ""
     var userPhone = ""
+    var userEmail = ""
     var textErrorName = ""
     var textErrorPhone = ""
+    var textErrorEmail = ""
 }
 
 final class SignupViewModel: ObservableObject {
@@ -27,11 +29,16 @@ final class SignupViewModel: ObservableObject {
                 set: { self.state.userPhone = $0 })
     }
     
+    var userEmailBinding: Binding<String> {
+        Binding(get: { self.state.userEmail },
+                set: { self.state.userEmail = $0 })
+    }
+    
     init(state: SignupViewState = .init()) {
         self.state = state
     }
     
     func isDisabledButton() -> Bool {
-        return false
+        return state.userName.isEmpty || state.userEmail.isEmpty || state.userPhone.isEmpty
     }
 }
